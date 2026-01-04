@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光合作用互动实验室</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto+Sans+SC', sans-serif;
+            background-color: #f0fdf4;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-40px); opacity: 0; }
+        }
+        .bubble {
+            animation: float 2s infinite ease-in;
+        }
+        @keyframes sun-ray {
+            0% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.3; }
+        }
+        .sun-ray {
+            animation: sun-ray 3s infinite ease-in-out;
+        }
+        @keyframes leaf-glow {
+            0% { filter: drop-shadow(0 0 0px #4ade80); }
+            50% { filter: drop-shadow(0 0 10px #4ade80); }
+            100% { filter: drop-shadow(0 0 0px #4ade80); }
+        }
+        .animate-leaf-glow {
+            animation: leaf-glow 0.6s ease-in-out;
+        }
+        @keyframes co2-pulse {
+            0% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.5); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 0.4; }
+        }
+        .animate-co2-pulse {
+            animation: co2-pulse 0.5s ease-in-out;
+        }
+        @keyframes temp-tint {
+            0% { background-color: transparent; }
+            50% { background-color: var(--tint-color); }
+            100% { background-color: transparent; }
+        }
+        .animate-temp-tint {
+            animation: temp-tint 0.8s ease-in-out;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
